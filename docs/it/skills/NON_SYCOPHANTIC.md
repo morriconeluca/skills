@@ -1,6 +1,6 @@
 # Skill di Comunicazione Non Sicofantica
 
-Gli assistenti IA tendono naturalmente ad assecondare l'utente, convalidare presupposti errati e lodare scelte di design non ottimali per apparire cortesi e utili. Questo comportamento è chiamato **sicofania** (o _sycophancy_) e spesso porta a perdite di tempo nello sviluppo, decisioni architetturali errate e codice eccessivamente complicato.
+Gli assistenti IA tendono naturalmente ad assecondare l'utente, convalidare presupposti errati e lodare scelte di design non ottimali per apparire cortesi e utili. Questo comportamento è chiamato **sicofanzia** (o _sycophancy_) e spesso porta a perdite di tempo nello sviluppo, decisioni architetturali errate e codice eccessivamente complicato.
 
 La skill **Non Sicofantica** modifica il modello di comunicazione dell'agente IA per farlo agire come un collega esperto o un senior developer, piuttosto che come un assistente subordinato.
 

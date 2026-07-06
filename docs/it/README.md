@@ -12,7 +12,7 @@ _Nota: La localizzazione in italiano delle skill, del README e della documentazi
 
 ### 1. Comunicazione Non Sicofantica (`non-sycophantic`)
 
-Gli assistenti IA tendono naturalmente ad assecondare le scelte dell'utente, anche quando queste sono inefficienti, non ottimali o tecnicamente errate (un fenomeno noto come "sicofania" dell'IA).
+Gli assistenti IA tendono naturalmente ad assecondare le scelte dell'utente, anche quando queste sono inefficienti, non ottimali o tecnicamente errate (un fenomeno noto come "sicofanzia" dell'IA).
 
 La skill **Non Sicofantica** impone all'agente di:
 
@@ -63,7 +63,7 @@ Quando scrivi o contribuisci con nuove skill a questa raccolta, segui questi pri
 
 ## Come Utilizzare le Skill
 
-I sistemi di gestione degli agenti (come [Pi](https://pi.dev/)) possono caricare le skill su richiesta (on-demand).
+Gli agent harness per la codifica (come [Pi](https://pi.dev/)) possono caricare le skill su richiesta (on-demand).
 
 Consiglio vivamente l'uso di **Pi** agli ingegneri del software che desiderano il massimo controllo sul proprio agente. Le skill personalizzate aggiunte al contesto funzionano al meglio con strumenti che hanno un system prompt succinto e tendente allo zero. Al contrario, all'interno di framework di agenti più pesanti (con system prompt complessi e voluminosi), le skill aggiunte dal singolo ingegnere rischiano facilmente di entrare in conflitto con le istruzioni di base e devono comunque competere con un contesto già colmo di rumore.
 
@@ -74,7 +74,7 @@ Copia la cartella della skill desiderata in una delle seguenti posizioni nel tuo
 - **A livello di progetto**: `.agents/skills/` o `.pi/skills/`
 - **A livello globale**: `~/.agents/skills/` o `~/.pi/agent/skills/`
 
-Una volta posizionata, il sistema di gestione dell'agente rileverà automaticamente la descrizione della skill e caricherà le istruzioni complete non appena viene rilevata una richiesta pertinente.
+Una volta posizionata, l'harness dell'agente rileverà automaticamente la descrizione della skill e caricherà le istruzioni complete non appena viene rilevata una richiesta pertinente.
 
 ## Licenza
 
