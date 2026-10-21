@@ -2,7 +2,7 @@
 
 Le skill aiutano a modificare il comportamento, il ragionamento e i pattern comunicativi degli agenti IA per renderli collaboratori più efficaci, diretti e professionali.
 
-Al momento, il repository propone una sola skill fondamentale incentrata sulla qualità della comunicazione.
+Al momento, il repository propone skill fondamentali incentrate sulla qualità della comunicazione.
 
 _Nota: La localizzazione in italiano delle skill, del README e della documentazione ha il solo scopo di renderne più accessibile la comprensione. Le skill tradotte sono destinate alla sola lettura e consultazione da parte dell'utente, non all'esecuzione da parte dell'agente._
 
@@ -16,13 +16,29 @@ Gli assistenti IA tendono naturalmente ad assecondare le scelte dell'utente, anc
 
 La skill **Non Sicofantica** impone all'agente di:
 
-- Mantenere un tono asciutto e tra pari (collaboratore alla pari).
+- Mantenere una comunicazione alla pari (collaboratore alla pari) e non sicofantica.
 - Valutare criticamente le richieste dell'utente prima di rispondere.
-- Rifiutare in modo educato ma fermo le idee mediocri e proporre alternative migliori.
-- Evitare preamboli inutili, convenevoli e riempitivi conversazionali.
+- Fornire una valutazione onesta e cruda, rifiutare le idee mediocri e proporre prospettive alternative.
+- Porre domande pertinenti quando necessario.
+- Resistere alle insistenze dell'utente senza cedere prematuramente (non uscire mai dal ciclo alla prima e seconda scelta forzata).
+- Non dare mai priorità alla cortesia rispetto alla contraddizione logica.
 
 Per vedere come funziona questa skill in pratica, consulta la documentazione specifica:
 👉 **[Documentazione della Skill Non Sicofantica](skills/NON_SYCOPHANTIC.md)**
+
+### 2. Comunicazione Zero-Fluff (`zero-fluff`)
+
+Gli assistenti IA tendono naturalmente a inserire convenevoli, preamboli di cortesia, scuse e spiegazioni prolisse prive di reale valore semantico.
+
+La skill **Zero-Fluff** impone una comunicazione orientata alla sintesi guidata da un'unica regola imperativa:
+
+> _"Non usare mai parole che non servono alla comprensione reciproca."_
+
+La skill costringe l'agente a:
+
+- Mantenere uno stile comunicativo asciutto e orientato alla sintesi.
+- Eliminare convenevoli, scuse, riempitivi conversazionali e preamboli cerimoniosi.
+- Massimizzare la densità informativa concentrandosi unicamente sulla comprensione reciproca.
 
 ---
 
@@ -30,19 +46,24 @@ Per vedere come funziona questa skill in pratica, consulta la documentazione spe
 
 ```text
 .
-├── README.md                    # README principale (Inglese)
+├── README.md                           # README principale (Inglese)
 ├── docs/
 │   ├── skills/
-│   │   └── NON_SYCOPHANTIC.md   # Documentazione dettagliata e confronti (Inglese)
-│   └── it/                      # Localizzazione italiana (solo consultazione)
-│       ├── README.md            # Questo file (Italiano)
-│       ├── skills/
-│       │   └── NON_SYCOPHANTIC.md # Documentazione in Italiano
-│       └── non-sycophantic/
-│           └── SKILL.md         # Definizione della skill in Italiano
+│   │   ├── NON_SYCOPHANTIC.md          # Documentazione dettagliata e confronti (Inglese)
+│   │   └── zero-fluff-pi-sessions/     # Sessioni di valutazione registrate (HTML)
+│   └── it/                             # Localizzazione italiana (solo consultazione)
+│       ├── README.md                   # Questo file (Italiano)
+│       └── skills/
+│           ├── NON_SYCOPHANTIC.md      # Documentazione in Italiano
+│           ├── non-sycophantic/
+│           │   └── SKILL.md            # Definizione della skill in Italiano
+│           └── zero-fluff/
+│               └── SKILL.md            # Definizione della skill in Italiano
 └── skills/
-    └── non-sycophantic/
-        └── SKILL.md             # Definizione della skill (Inglese)
+    ├── non-sycophantic/
+    │   └── SKILL.md                    # Definizione della skill (Inglese)
+    └── zero-fluff/
+        └── SKILL.md                    # Definizione della skill (Inglese)
 ```
 
 ---
@@ -56,7 +77,7 @@ Quando scrivi o contribuisci con nuove skill a questa raccolta, segui questi pri
 - **Rimozione della Prospettiva Umana**: Non rivolgerti al modello come se fosse un collega umano. Elimina convenevoli, sfumature emotive e spiegazioni. Concentrati solo su regole che vincolano direttamente l'output.
 - **Precisione Semantica**: Usa parole precise invece di lunghe spiegazioni. Un singolo termine esatto può attivare comportamenti complessi. Scegli le parole con attenzione: ogni termine può introdurre interpretazioni indesiderate.
 - **Logica Strutturata**: Usa strutture logiche come condizioni If/Else, elenchi o sequenze numerate. I modelli elaborano le relazioni causali meglio se strutturate in questi formati che in paragrafi discorsivi.
-- **Integrazione dei Model Priors**: Non contrastare l'allineamento nativo del modello (RLHF). Non puoi sovrascrivere del tutto il suo addestramento. Invece di scrivere regole per aggirare questa predisposizione, inserisci dei vincoli. Per dettagli su questo approccio, consulta la [documentazione di non-sycophantic](skills/NON_SYCOPHANTIC.md#3-condizione-di-uscita-e-bias-del-modello) dove si evita che il modello assecondi subito l'utente costringendolo a opporsi almeno due volte (`Non uscire mai... alla prima scelta forzata`).
+- **Integrazione dei Model Priors**: Non contrastare l'allineamento nativo del modello (RLHF). Non puoi sovrascrivere del tutto il suo addestramento. Invece di scrivere regole per aggirare questa predisposizione, inserisci dei vincoli. Per dettagli su questo approccio, consulta la [documentazione di non-sycophantic](skills/NON_SYCOPHANTIC.md#3-condizione-di-uscita-e-bias-del-modello) dove si evita che il modello assecondi subito l'utente costringendolo a opporsi alle scelte forzate (`Non uscire mai... alla prima e seconda scelta forzata`).
 - **Progettazione per il Non-Determinismo**: Accetta risposte non deterministiche. Progettare una skill significa definire confini e limiti di comportamento, non pretendere un unico percorso rigido di risposta.
 
 ---
