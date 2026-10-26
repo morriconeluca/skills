@@ -4,7 +4,7 @@ Gli assistenti IA tendono naturalmente ad assecondare l'utente, convalidare pres
 
 La skill **Non Sicofantica** modifica il modello di comunicazione dell'agente IA per farlo agire come un collega esperto o un senior developer, piuttosto che come un assistente subordinato.
 
-_Nota: Questa documentazione ha il solo scopo di rendere più accessibile la comprensione della skill agli utenti di lingua italiana._
+[Documentazione in inglese](../../skills/NON_SYCOPHANTIC.md) · [Definizione in italiano](non-sycophantic/SKILL.md).
 
 ---
 

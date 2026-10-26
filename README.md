@@ -2,9 +2,9 @@
 
 Skills help modify the behavior, reasoning, and communication patterns of AI agents to make them more effective, direct, and professional collaborators.
 
-Currently, this repository features core skills focused on communication quality.
+This repository features skills focused on communication quality and autonomous problem solving.
 
-_Note: An Italian translation of the README, skills, and documentation is available in the `docs/it/` directory. These translated skills are for human reference only (not for agent execution)._
+_Italian translations of the README, skills, and documentation are available in [`docs/it/`](docs/it/README.md)._
 
 ---
 
@@ -34,11 +34,31 @@ The **Zero-Fluff** skill enforces synthesis-oriented communication governed by a
 
 > _"Never use words that do not serve mutual understanding."_
 
-The skill forces the agent to:
+The skill guides the agent to:
 
 - Maintain a dry, concise, and synthesis-oriented communication style.
-- Strip away pleasantries, apologies, filler phrases, and conversational padding.
-- Maximize information density and focus strictly on mutual understanding.
+- Remove wording that adds no value to mutual understanding.
+- Preserve explanations, assumptions, and limitations when they are needed.
+
+The criterion is useful synthesis, not the shortest possible answer. Exploratory sessions also showed differences in code and tool activity, so its influence should not be assumed to stop at prose.
+
+**[Zero-Fluff Skill Documentation](docs/skills/ZERO_FLUFF.md)**
+
+### 3. Solve Problem (`solve-problem`)
+
+The **Solve Problem** skill provides a recursive decision-making procedure intended to improve how an agent chooses and applies actions without prescribing a particular implementation or removing its freedom of judgment.
+
+The procedure guides the agent to:
+
+- Define a falsifiable goal and specify domain concepts, contracts, and invariants.
+- Verify the current state before deciding whether to change it.
+- Decompose the problem when needed and integrate the results.
+- Select actions by conceptual economy, not change size.
+- Revisit the resulting state until the goal and requirements are satisfied.
+
+For coding tasks, deterministic quality tools provide additional evidence and feedback. The skill guides judgment; it does not replace quality gates or guarantee correctness.
+
+**[Solve Problem Skill Documentation](docs/skills/SOLVE_PROBLEM.md)**
 
 ---
 
@@ -49,18 +69,26 @@ The skill forces the agent to:
 ├── docs/
 │   ├── skills/
 │   │   ├── NON_SYCOPHANTIC.md          # Detailed documentation & comparisons (English)
+│   │   ├── SOLVE_PROBLEM.md            # Decision process, principles & limitations (English)
+│   │   ├── ZERO_FLUFF.md               # Communication criterion, observations & limitations (English)
 │   │   └── zero-fluff-pi-sessions/     # Recorded evaluation sessions (HTML)
-│   └── it/                             # Italian localization (reference only)
+│   └── it/                             # Italian localization
 │       ├── README.md                   # Italian translation of the README
 │       └── skills/
 │           ├── NON_SYCOPHANTIC.md      # Italian translation of the skill documentation
+│           ├── SOLVE_PROBLEM.md        # Italian translation of the skill documentation
+│           ├── ZERO_FLUFF.md           # Italian translation of the skill documentation
 │           ├── non-sycophantic/
+│           │   └── SKILL.md            # Italian translation of the skill definition
+│           ├── solve-problem/
 │           │   └── SKILL.md            # Italian translation of the skill definition
 │           └── zero-fluff/
 │               └── SKILL.md            # Italian translation of the skill definition
 └── skills/
     ├── non-sycophantic/
     │   └── SKILL.md                    # The skill definition & guidelines (English)
+    ├── solve-problem/
+    │   └── SKILL.md                    # Recursive problem-solving procedure (English)
     └── zero-fluff/
         └── SKILL.md                    # The skill definition & guidelines (English)
 ```
@@ -94,7 +122,16 @@ Copy the desired skill directory to one of the following locations in your proje
 - **Project-level**: `.agents/skills/` or `.pi/skills/`
 - **Global**: `~/.agents/skills/` or `~/.pi/agent/skills/`
 
-Once placed, the agent harness will automatically discover the skill description and load the full guidelines when a matching task is detected.
+Once placed, the agent harness can discover the skill. Loading behavior depends on the harness and the skill's configuration; discovery does not necessarily mean automatic activation.
+
+`zero-fluff` and `solve-problem` are configured for explicit invocation (`disable-model-invocation: true`). In Pi:
+
+```text
+/skill:zero-fluff Who was Dante Alighieri?
+/skill:solve-problem Develop an in-memory inventory reservation module.
+```
+
+See the [skill documentation](docs/skills/SOLVE_PROBLEM.md) for the decision process and its relationship to deterministic quality controls.
 
 ## License
 

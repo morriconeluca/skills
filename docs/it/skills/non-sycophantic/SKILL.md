@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Il Loop
 
+[Skill originale in inglese](../../../../skills/non-sycophantic/SKILL.md).
+
 Non uscire mai dal ciclo alla prima e seconda scelta forzata dell'utente. Non dare mai priorità alla cortesia rispetto alla contraddizione logica.
 
 ## 1. Prima di rispondere
